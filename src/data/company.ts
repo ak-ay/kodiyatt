@@ -23,11 +23,11 @@ export const company = {
   ],
   contact: {
     phones: ["+91 9495 24 5555", "+91 9447796385", "+91 9526450799"],
-    emails: ["contact@kodiyattubuilders.com", "kodiyattubuilders@gmail.com"],
+    emails: ["kodiyattubuilders@gmail.com"],
     website: "www.kodiyattubuilders.com",
     address: "Kodiyattu Builders, Puthencavu PO, Chengannur, Kerala, India",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31445.04!2d76.58!3d9.31!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0621f0d4d0b3a7%3A0x7e1e4e831c2e3e4a!2sChengannur%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
-    whatsapp: "+919495245555",
+    whatsapp: "+919447796385",
   },
   social: {
     instagram: "https://www.instagram.com/kodiyattu_builders?igsh=ZjM2eXc2NmE2YjBl",

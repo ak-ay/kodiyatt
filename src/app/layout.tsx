@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { Outfit, Inter } from "next/font/google";
+import { Sora, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const outfitFont = Outfit({
+const displayFont = Sora({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const interFont = Inter({
+const bodyFont = Manrope({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/assets/logo.png",
+    shortcut: "/assets/logo.png",
+    apple: "/assets/logo.png",
   },
 };
 
@@ -78,7 +78,7 @@ export default function RootLayout({
                 "Premium construction company in Kerala offering design, construction, interior and landscape services.",
               url: "https://kodiyattubuilders.com",
               telephone: ["+919495245555", "+919447796385", "+919526450799"],
-              email: "contact@kodiyattubuilders.com",
+              email: "kodiyattubuilders@gmail.com",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Puthencavu PO",
@@ -98,7 +98,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${outfitFont.variable} ${interFont.variable} antialiased`}
+        className={`${displayFont.variable} ${bodyFont.variable} antialiased`}
       >
         <Navbar />
         <main>{children}</main>

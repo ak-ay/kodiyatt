@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, company } from "@/data/company";
 
@@ -38,13 +39,14 @@ export default function Navbar() {
                 <div className="container-custom flex items-center justify-between px-6 md:px-12">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3 group">
-                        <div className="w-10 h-10 flex items-center justify-center">
-                            <svg viewBox="0 0 40 40" className="w-full h-full">
-                                <polygon points="8,38 8,2 20,2 20,28" fill="#c9a96e" className="transition-all duration-500 group-hover:fill-[#d4b97e]" />
-                                <polygon points="20,38 20,18 32,38" fill="#c9a96e" className="transition-all duration-500 group-hover:fill-[#d4b97e]" />
-                                <circle cx="14" cy="32" r="3" fill="#0d0d0d" />
-                            </svg>
-                        </div>
+                        <Image
+                            src="/assets/logo.png"
+                            alt="Kodiyattu Builders logo"
+                            width={42}
+                            height={42}
+                            className="w-10 h-10 object-contain"
+                            priority
+                        />
                         <div>
                             <span className="text-cream font-display text-lg font-semibold tracking-wide">
                                 KODIYATTU

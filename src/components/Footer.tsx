@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { company, navLinks } from "@/data/company";
 
 export default function Footer() {
@@ -9,11 +10,13 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="lg:col-span-1">
                         <Link href="/" className="flex items-center gap-3 group mb-6">
-                            <svg viewBox="0 0 40 40" className="w-10 h-10">
-                                <polygon points="8,38 8,2 20,2 20,28" fill="#c9a96e" />
-                                <polygon points="20,38 20,18 32,38" fill="#c9a96e" />
-                                <circle cx="14" cy="32" r="3" fill="#0d0d0d" />
-                            </svg>
+                            <Image
+                                src="/assets/logo.png"
+                                alt="Kodiyattu Builders logo"
+                                width={42}
+                                height={42}
+                                className="w-10 h-10 object-contain"
+                            />
                             <div>
                                 <span className="text-cream font-display text-lg font-semibold tracking-wide">KODIYATTU</span>
                                 <span className="block text-gold text-[10px] tracking-[0.25em] uppercase -mt-1">Builders</span>
