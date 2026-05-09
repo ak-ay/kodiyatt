@@ -22,7 +22,7 @@ export const company = {
     { value: "15+", label: "Expert Craftsmen", suffix: "" },
   ],
   contact: {
-    phones: ["+91 9495 24 5555", "+91 9447796385", "+91 9526450799"],
+    phones: ["+91 9447796385", "+91 9526450799"],
     emails: ["kodiyattubuilders@gmail.com"],
     website: "www.kodiyattubuilders.com",
     address: "Kodiyattu Builders, Puthencavu PO, Chengannur, Kerala, India",

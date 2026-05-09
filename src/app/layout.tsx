@@ -77,7 +77,7 @@ export default function RootLayout({
               description:
                 "Premium construction company in Kerala offering design, construction, interior and landscape services.",
               url: "https://kodiyattubuilders.com",
-              telephone: ["+919495245555", "+919447796385", "+919526450799"],
+              telephone: ["+919447796385", "+919526450799"],
               email: "kodiyattubuilders@gmail.com",
               address: {
                 "@type": "PostalAddress",
