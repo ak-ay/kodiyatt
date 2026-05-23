@@ -67,7 +67,7 @@ export default function Home() {
         {/* Hero content */}
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="relative z-10 h-full flex flex-col justify-center items-center text-center px-5 sm:px-6 pt-28 pb-24 sm:pb-20"
+          className="relative z-10 min-h-[100svh] flex flex-col justify-center items-center text-center px-5 sm:px-6 pt-28 pb-14 sm:pb-12"
         >
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -125,7 +125,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="hidden sm:flex absolute bottom-12 left-6 right-6 justify-center gap-8 md:gap-16"
+            className="hidden sm:flex mt-10 w-full max-w-3xl justify-center gap-8 md:gap-16"
           >
             {company.stats.slice(0, 3).map((stat, i) => (
               <div key={i} className="text-center">
