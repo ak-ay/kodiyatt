@@ -251,7 +251,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════ SERVICES ═══════════ */}
-      <section className="section-padding bg-deep">
+      <section id="services" className="section-padding bg-deep">
         <div className="container-custom">
           <SectionHeader
             tag="Our Services"
@@ -263,6 +263,61 @@ export default function Home() {
             {services.map((service, i) => (
               <ServiceCard key={service.id} {...service} index={i} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ SERVICE AREAS ═══════════ */}
+      <section className="section-padding bg-charcoal">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div>
+              <SectionHeader
+                tag="Service Areas"
+                title="Construction Company in Kerala, Thiruvalla and Chengannur"
+                description="Kodiyattu Builders serves clients across Kerala with a strong local presence around Thiruvalla, Chengannur, Pathanamthitta and Alappuzha."
+              />
+              <motion.p {...fadeUp} className="text-muted leading-relaxed -mt-8">
+                Families, architects and organizations choose Kodiyattu Builders
+                for premium home construction, villa construction, interiors,
+                renovation, landscape design and commercial construction across
+                Kerala. Our work combines local site understanding with careful
+                planning, quality materials and disciplined finishing.
+              </motion.p>
+            </div>
+            <motion.div {...fadeUp} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                {
+                  title: "Kerala",
+                  href: "/construction-company-kerala",
+                  text: "Premium homes, commercial projects, interiors and landscapes across Kerala.",
+                },
+                {
+                  title: "Thiruvalla",
+                  href: "/builders-thiruvalla",
+                  text: "Construction and renovation services for Thiruvalla and nearby towns.",
+                },
+                {
+                  title: "Chengannur",
+                  href: "/builders-chengannur",
+                  text: "Chengannur-based builders with project reach across Pathanamthitta and Alappuzha.",
+                },
+              ].map((area) => (
+                <Link
+                  key={area.href}
+                  href={area.href}
+                  className="border border-card-border bg-deep/50 p-5 hover:border-gold/50 transition-colors"
+                >
+                  <h3 className="font-display text-xl text-cream font-semibold">
+                    {area.title}
+                  </h3>
+                  <p className="text-muted text-sm mt-3 leading-relaxed">{area.text}</p>
+                  <span className="text-gold text-xs tracking-wider uppercase mt-5 block">
+                    Learn More
+                  </span>
+                </Link>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>

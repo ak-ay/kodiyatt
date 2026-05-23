@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { pageMetadata, structuredData, siteUrl } from "@/lib/seo";
 
 const displayFont = Sora({
   variable: "--font-display",
@@ -20,37 +21,33 @@ const bodyFont = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Kodiyattu Builders | Premium Construction & Interior Solutions in Kerala",
-  description:
-    "Kodiyattu Builders — Kerala's leading construction company delivering premium homes, interiors & landscapes with 10+ years of excellence. Design, construction, interior & landscape services.",
-  keywords: [
-    "Kodiyattu Builders",
-    "Kerala construction company",
-    "premium home builders Kerala",
-    "interior design Kerala",
-    "Chengannur builders",
-    "luxury homes Kerala",
-    "residential construction",
-    "commercial construction Kerala",
-  ],
-  openGraph: {
-    title: "Kodiyattu Builders | Premium Construction in Kerala",
+  metadataBase: new URL(siteUrl),
+  ...pageMetadata({
+    title:
+      "Kodiyattu Builders | Best Construction Company in Kerala, Thiruvalla & Chengannur",
     description:
-      "Building Dreams, Crafting Legacies — Premium construction, interior & landscape solutions with 10+ years of excellence in Kerala.",
-    url: "https://kodiyattubuilders.com",
-    siteName: "Kodiyattu Builders",
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Kodiyattu Builders | Premium Construction in Kerala",
-    description:
-      "Building Dreams, Crafting Legacies — Premium construction, interior & landscape solutions in Kerala.",
+      "Kodiyattu Builders is a premium construction company in Kerala for homes, villas, interiors, landscapes and commercial projects across Thiruvalla, Chengannur, Pathanamthitta and Alappuzha.",
+  }),
+  applicationName: "Kodiyattu Builders",
+  authors: [{ name: "Kodiyattu Builders" }],
+  creator: "Kodiyattu Builders",
+  publisher: "Kodiyattu Builders",
+  category: "Construction Company",
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: "/assets/logo.png",
@@ -70,30 +67,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Kodiyattu Builders",
-              description:
-                "Premium construction company in Kerala offering design, construction, interior and landscape services.",
-              url: "https://kodiyattubuilders.com",
-              telephone: ["+919447796385", "+919526450799"],
-              email: "kodiyattubuilders@gmail.com",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Puthencavu PO",
-                addressLocality: "Chengannur",
-                addressRegion: "Kerala",
-                addressCountry: "IN",
-              },
-              areaServed: "Kerala, India",
-              priceRange: "₹₹₹",
-              openingHours: "Mo-Sa 09:00-18:00",
-              sameAs: [
-                "https://www.instagram.com/kodiyattu_builders?igsh=ZjM2eXc2NmE2YjBl",
-                "https://facebook.com/kodiyattubuilders",
-              ],
-            }),
+            __html: JSON.stringify(structuredData()),
           }}
         />
       </head>
