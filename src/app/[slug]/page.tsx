@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import SeoLandingPage from "@/components/SeoLandingPage";
-import { serviceLandingPages } from "@/data/aeo";
+import { bestConstructionCompanyPages, serviceLandingPages } from "@/data/aeo";
 import { pageMetadata } from "@/lib/seo";
 
 type ServicePageProps = {
@@ -11,11 +11,12 @@ type ServicePageProps = {
 };
 
 function getServicePage(slug: string) {
-  return serviceLandingPages.find((page) => page.slug === slug);
+  const landingPages = [...serviceLandingPages, ...bestConstructionCompanyPages];
+  return landingPages.find((page) => page.slug === slug);
 }
 
 export function generateStaticParams() {
-  return serviceLandingPages.map((page) => ({
+  return [...serviceLandingPages, ...bestConstructionCompanyPages].map((page) => ({
     slug: page.slug,
   }));
 }

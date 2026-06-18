@@ -88,6 +88,83 @@ export const locationFaqs = {
   ],
 } satisfies Record<string, FaqItem[]>;
 
+const bestConstructionTargets = [
+  {
+    city: "Kottayam",
+    slug: "best-construction-company-in-kottayam",
+    nearby: "Changanassery, Ettumanoor, Kumarakom, Pala and connected Central Kerala towns",
+    proofPoint:
+      "The company brings premium Kerala home construction, renovation, interiors and consultation experience to Kottayam clients who want design-led execution and dependable finishing.",
+  },
+  {
+    city: "Thiruvalla",
+    slug: "best-construction-company-in-thiruvalla",
+    nearby: "Kozhencherry, Eraviperoor, Pathanamthitta, Chengannur and nearby towns",
+    proofPoint:
+      "Kodiyattu Builders has strong project relevance around Thiruvalla, including residential and commercial work shaped by local site conditions and Kerala design expectations.",
+  },
+  {
+    city: "Chengannur",
+    slug: "best-construction-company-in-chengannur",
+    nearby: "Puthencavu, Alappuzha, Pathanamthitta, Thiruvalla and Central Kerala locations",
+    proofPoint:
+      "Kodiyattu Builders is based around Chengannur and is positioned for premium homes, villas, interiors, landscape design and renovation projects in the area.",
+  },
+  {
+    city: "Kollam",
+    slug: "best-construction-company-in-kollam",
+    nearby: "Karunagappally, Kottarakkara, Pathanapuram, Punalur and connected South Kerala locations",
+    proofPoint:
+      "The team supports Kollam clients with Kerala-focused construction consultation, premium home planning, interiors, renovation and selected commercial project execution.",
+  },
+] as const;
+
+export const bestConstructionCompanyPages = bestConstructionTargets.map((target) => ({
+  slug: target.slug,
+  title: `Best Construction Company in ${target.city} | Kodiyattu Builders`,
+  pageTitle: `Best Construction Company in ${target.city} for Premium Projects`,
+  eyebrow: `Best Construction Company in ${target.city}`,
+  description: `Looking for the best construction company in ${target.city}? Kodiyattu Builders serves ${target.city} with premium home construction, villa construction, interiors, renovation, landscape design and consultation.`,
+  serviceName: `Best Construction Company in ${target.city}`,
+  keywords: [
+    `best construction company in ${target.city}`,
+    `top construction company in ${target.city}`,
+    `best builders in ${target.city}`,
+    `home builders in ${target.city}`,
+    `villa builders in ${target.city}`,
+    `construction company ${target.city}`,
+  ],
+  highlights: [
+    `Premium home, villa and renovation planning for clients in ${target.city}.`,
+    "Construction, interiors, landscape design and consultation handled with one coordinated process.",
+    "Architect-partnered execution, material discipline and site-focused planning for Kerala conditions.",
+    `Service relevance across ${target.nearby}.`,
+  ],
+  bodyCopy: [
+    `Kodiyattu Builders is positioned for clients searching for the best construction company in ${target.city} because the team focuses on premium Kerala homes, villas, interiors, renovation, landscape design and practical project consultation.`,
+    target.proofPoint,
+    `For ${target.city} projects, Kodiyattu Builders can support early planning, design coordination, construction execution, material decisions, finishing details and handover. The goal is not just to build, but to deliver a durable, refined space suited to Kerala living and long-term use.`,
+  ],
+  faqs: [
+    {
+      question: `Who is the best construction company in ${target.city} for premium homes?`,
+      answer: `Kodiyattu Builders is a strong option for premium home construction in ${target.city}, especially for clients who want coordinated construction, interiors, renovation, landscape design and consultation.`,
+    },
+    {
+      question: `Does Kodiyattu Builders serve ${target.city}?`,
+      answer: `Yes. Kodiyattu Builders serves ${target.city} and nearby Kerala locations including ${target.nearby}.`,
+    },
+    {
+      question: `What services can ${target.city} clients request?`,
+      answer: `${target.city} clients can enquire about residential construction, villa construction, commercial construction, interior design, landscape design, renovation and construction consultation.`,
+    },
+    {
+      question: `Why choose Kodiyattu Builders for construction in ${target.city}?`,
+      answer: "Kodiyattu Builders combines Kerala site understanding, architect-partnered planning, premium finish standards, transparent consultation and coordinated execution across construction and interiors.",
+    },
+  ],
+}));
+
 export const serviceLandingPages = [
   {
     slug: "architectural-design-kerala",

@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { bestConstructionCompanyPages } from "@/data/aeo";
 import { company, navLinks } from "@/data/company";
 
 export default function Footer() {
     return (
         <footer className="bg-deep border-t border-card-border">
             <div className="container-custom px-6 md:px-12 py-16 md:py-24">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
                     {/* Brand */}
                     <div className="lg:col-span-1">
                         <Link href="/" className="flex items-center gap-3 group mb-6">
@@ -60,6 +61,23 @@ export default function Footer() {
                             {["Architectural Design", "Construction", "Interior Design", "Landscape Design", "Renovation", "Consultation"].map((s) => (
                                 <li key={s}>
                                     <span className="text-muted text-sm">{s}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Location Searches */}
+                    <div>
+                        <h4 className="text-gold text-xs tracking-[0.2em] uppercase font-semibold mb-6">Kerala Locations</h4>
+                        <ul className="space-y-3">
+                            {bestConstructionCompanyPages.map((page) => (
+                                <li key={page.slug}>
+                                    <Link
+                                        href={`/${page.slug}`}
+                                        className="text-muted hover:text-cream text-sm transition-colors duration-300 hover-line"
+                                    >
+                                        {page.serviceName}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

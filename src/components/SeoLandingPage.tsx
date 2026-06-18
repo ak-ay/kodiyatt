@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { company, projects } from "@/data/company";
-import { serviceLandingPages } from "@/data/aeo";
+import { bestConstructionCompanyPages, serviceLandingPages } from "@/data/aeo";
 import {
   type FaqItem,
   pageStructuredData,
@@ -141,6 +141,21 @@ export default function SeoLandingPage({
                     {phone}
                   </a>
                 ))}
+              </div>
+              <div className="border-t border-card-border mt-6 pt-6">
+                <p className="text-cream font-semibold mb-3">Location Pages</p>
+                <ul className="space-y-3">
+                  {bestConstructionCompanyPages.map((page) => (
+                    <li key={page.slug}>
+                      <Link
+                        href={`/${page.slug}`}
+                        className="text-muted hover:text-gold transition-colors text-sm"
+                      >
+                        {page.serviceName}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
               <div className="border-t border-card-border mt-6 pt-6">
                 <p className="text-cream font-semibold mb-3">Service Areas</p>

@@ -30,6 +30,10 @@ export const serviceAreas = [
 
 export const coreKeywords = [
   "best construction company in Kerala",
+  "best construction company in Kottayam",
+  "best construction company in Thiruvalla",
+  "best construction company in Chengannur",
+  "best construction company in Kollam",
   "construction company in Kerala",
   "builders in Kerala",
   "builders in Thiruvalla",
