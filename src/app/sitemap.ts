@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { serviceLandingPages } from "@/data/aeo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://kodiyattubuilders.com";
@@ -15,6 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: "monthly" as const,
             priority: 0.85,
+        })),
+        ...serviceLandingPages.map((page) => ({
+            url: `${baseUrl}/${page.slug}`,
+            lastModified: new Date(),
+            changeFrequency: "monthly" as const,
+            priority: 0.82,
         })),
         ...projects.map((slug) => ({
             url: `${baseUrl}/projects/${slug}`,

@@ -1,12 +1,27 @@
 import Link from "next/link";
-import { company, projects, services } from "@/data/company";
+import { company, projects } from "@/data/company";
+import { serviceLandingPages } from "@/data/aeo";
+import {
+  type FaqItem,
+  pageStructuredData,
+  serviceAreas,
+} from "@/lib/seo";
 
 type SeoLandingPageProps = {
   eyebrow: string;
   title: string;
   intro: string;
   area: string;
-  highlights: string[];
+  highlights: readonly string[];
+  path: string;
+  faqs: readonly FaqItem[];
+  bodyTitle?: string;
+  bodyCopy?: readonly string[];
+  schemaService?: {
+    name: string;
+    description: string;
+    areaServed?: readonly string[];
+  };
 };
 
 export default function SeoLandingPage({
@@ -15,9 +30,40 @@ export default function SeoLandingPage({
   intro,
   area,
   highlights,
+  path,
+  faqs,
+  bodyTitle,
+  bodyCopy,
+  schemaService,
 }: SeoLandingPageProps) {
+  const pageSchema = pageStructuredData({
+    path,
+    title,
+    description: intro,
+    breadcrumbs: [
+      { name: "Home", path: "/" },
+      { name: title, path },
+    ],
+    faqs,
+    service: schemaService ?? {
+      name: `${title} by ${company.name}`,
+      description: intro,
+      areaServed: serviceAreas,
+    },
+  });
+  const copy = bodyCopy ?? [
+    `${company.name} works with homeowners, families, architects and organizations looking for dependable construction quality in ${area} and nearby Kerala locations. The team handles residential construction, commercial projects, interiors, renovation, landscape work and practical project consultation.`,
+    "The company is based around Chengannur and serves nearby markets including Thiruvalla, Pathanamthitta, Alappuzha, Kozhencherry, Eraviperoor, Edathua and Thalavadi. Every project is approached with clear planning, material discipline, site coordination and finishing standards suited to Kerala homes and commercial spaces.",
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pageSchema),
+        }}
+      />
       <section className="pt-28 sm:pt-32 pb-14 sm:pb-20 bg-deep">
         <div className="container-custom px-6 md:px-12">
           <div className="max-w-4xl">
@@ -50,24 +96,12 @@ export default function SeoLandingPage({
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
             <div className="lg:col-span-2">
               <h2 className="font-display text-3xl md:text-4xl text-cream font-semibold mb-6">
-                Construction, Interiors and Project Delivery in {area}
+                {bodyTitle ?? `Construction, Interiors and Project Delivery in ${area}`}
               </h2>
               <div className="space-y-5 text-muted leading-relaxed">
-                <p>
-                  {company.name} works with homeowners, families, architects and
-                  organizations looking for dependable construction quality in
-                  {` ${area}`} and nearby Kerala locations. The team handles
-                  residential construction, commercial projects, interiors,
-                  renovation, landscape work and practical project consultation.
-                </p>
-                <p>
-                  The company is based around Chengannur and serves nearby
-                  markets including Thiruvalla, Pathanamthitta, Alappuzha,
-                  Kozhencherry, Eraviperoor, Edathua and Thalavadi. Every
-                  project is approached with clear planning, material discipline,
-                  site coordination and finishing standards suited to Kerala
-                  homes and commercial spaces.
-                </p>
+                {copy.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
@@ -85,13 +119,13 @@ export default function SeoLandingPage({
                 Services
               </h2>
               <ul className="space-y-3">
-                {services.map((service) => (
-                  <li key={service.id}>
+                {serviceLandingPages.map((service) => (
+                  <li key={service.slug}>
                     <Link
-                      href="/#services"
+                      href={`/${service.slug}`}
                       className="text-muted hover:text-gold transition-colors text-sm"
                     >
-                      {service.title}
+                      {service.serviceName}
                     </Link>
                   </li>
                 ))}
@@ -107,6 +141,19 @@ export default function SeoLandingPage({
                     {phone}
                   </a>
                 ))}
+              </div>
+              <div className="border-t border-card-border mt-6 pt-6">
+                <p className="text-cream font-semibold mb-3">Service Areas</p>
+                <div className="flex flex-wrap gap-2">
+                  {serviceAreas.map((place) => (
+                    <span
+                      key={place}
+                      className="text-xs text-muted border border-card-border px-3 py-1"
+                    >
+                      {place}
+                    </span>
+                  ))}
+                </div>
               </div>
             </aside>
           </div>
@@ -142,6 +189,34 @@ export default function SeoLandingPage({
                 </h3>
                 <p className="text-muted text-sm mt-2">{project.location}</p>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-deep">
+        <div className="container-custom">
+          <div className="max-w-3xl mb-10">
+            <span className="text-gold text-xs tracking-[0.3em] uppercase font-semibold">
+              Questions Answered
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl text-cream font-semibold mt-4">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {faqs.map((faq) => (
+              <article
+                key={faq.question}
+                className="border border-card-border bg-charcoal/40 p-5"
+              >
+                <h3 className="font-display text-lg text-cream font-semibold leading-snug">
+                  {faq.question}
+                </h3>
+                <p className="text-muted text-sm leading-relaxed mt-4">
+                  {faq.answer}
+                </p>
+              </article>
             ))}
           </div>
         </div>

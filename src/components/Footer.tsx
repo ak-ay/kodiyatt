@@ -71,7 +71,8 @@ export default function Footer() {
                         <div className="space-y-4 text-sm text-muted">
                             <div>
                                 <p className="text-cream/80 mb-1">Phone</p>
-                                <a href={`tel:${company.contact.phones[0]}`} className="hover:text-gold transition-colors break-all">{company.contact.phones[0]}</a>
+                                <a href="tel:+919447796385" className="hover:text-gold transition-colors break-all block">+91 9447796385</a>
+                                <a href="tel:+919526450799" className="hover:text-gold transition-colors break-all block">+91 9526450799</a>
                             </div>
                             <div>
                                 <p className="text-cream/80 mb-1">Email</p>

@@ -10,6 +10,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import ContactForm from "@/components/ContactForm";
 import { company, services, projects, processSteps } from "@/data/company";
+import { serviceLandingPages } from "@/data/aeo";
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -264,6 +265,28 @@ export default function Home() {
               <ServiceCard key={service.id} {...service} index={i} />
             ))}
           </div>
+          <motion.div
+            {...fadeUp}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10"
+          >
+            {serviceLandingPages.map((page) => (
+              <Link
+                key={page.slug}
+                href={`/${page.slug}`}
+                className="border border-card-border bg-charcoal/40 p-5 hover:border-gold/50 transition-colors"
+              >
+                <span className="text-gold text-xs tracking-[0.2em] uppercase font-semibold">
+                  {page.serviceName}
+                </span>
+                <h3 className="font-display text-lg text-cream font-semibold mt-3">
+                  {page.pageTitle}
+                </h3>
+                <p className="text-muted text-sm mt-3 leading-relaxed">
+                  {page.description}
+                </p>
+              </Link>
+            ))}
+          </motion.div>
         </div>
       </section>
 

@@ -3,6 +3,16 @@ import { company, projects, services } from "@/data/company";
 
 export const siteUrl = "https://kodiyattubuilders.com";
 
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export type BreadcrumbItem = {
+  name: string;
+  path: string;
+};
+
 export const serviceAreas = [
   "Kerala",
   "Thiruvalla",
@@ -192,6 +202,114 @@ export function structuredData() {
           },
         ],
       },
+    ],
+  };
+}
+
+export function breadcrumbStructuredData(items: readonly BreadcrumbItem[]) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteUrl}${item.path}`,
+    })),
+  };
+}
+
+export function faqStructuredData({
+  path,
+  faqs,
+}: {
+  path: string;
+  faqs: readonly FaqItem[];
+}) {
+  return {
+    "@type": "FAQPage",
+    "@id": `${siteUrl}${path}#faq`,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function serviceStructuredData({
+  name,
+  description,
+  path,
+  areaServed = serviceAreas,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  areaServed?: readonly string[];
+}) {
+  return {
+    "@type": "Service",
+    "@id": `${siteUrl}${path}#service`,
+    name,
+    description,
+    url: `${siteUrl}${path}`,
+    provider: {
+      "@id": `${siteUrl}/#business`,
+    },
+    areaServed: areaServed.map((area) => ({ "@type": "Place", name: area })),
+  };
+}
+
+export function pageStructuredData({
+  path,
+  title,
+  description,
+  breadcrumbs,
+  faqs,
+  service,
+}: {
+  path: string;
+  title: string;
+  description: string;
+  breadcrumbs: readonly BreadcrumbItem[];
+  faqs: readonly FaqItem[];
+  service?: {
+    name: string;
+    description: string;
+    areaServed?: readonly string[];
+  };
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${siteUrl}${path}#webpage`,
+        url: `${siteUrl}${path}`,
+        name: title,
+        description,
+        isPartOf: {
+          "@id": `${siteUrl}/#website`,
+        },
+        about: {
+          "@id": `${siteUrl}/#business`,
+        },
+      },
+      breadcrumbStructuredData(breadcrumbs),
+      faqStructuredData({ path, faqs }),
+      ...(service
+        ? [
+            serviceStructuredData({
+              name: service.name,
+              description: service.description,
+              path,
+              areaServed: service.areaServed,
+            }),
+          ]
+        : []),
     ],
   };
 }

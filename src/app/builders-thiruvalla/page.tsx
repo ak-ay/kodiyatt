@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SeoLandingPage from "@/components/SeoLandingPage";
 import { pageMetadata } from "@/lib/seo";
+import { locationFaqs } from "@/data/aeo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Builders in Thiruvalla | Construction Company Near Thiruvalla",
@@ -21,6 +22,7 @@ export default function BuildersThiruvallaPage() {
       eyebrow="Builders in Thiruvalla"
       title="Premium Builders in Thiruvalla"
       area="Thiruvalla"
+      path="/builders-thiruvalla"
       intro="Kodiyattu Builders serves Thiruvalla and nearby areas with premium construction, interior, renovation and landscape project delivery."
       highlights={[
         "Home construction and villa projects for families around Thiruvalla.",
@@ -28,6 +30,7 @@ export default function BuildersThiruvallaPage() {
         "Interior, renovation and landscape services for complete property improvement.",
         "Local project experience across Thiruvalla, Chengannur, Kozhencherry and Pathanamthitta.",
       ]}
+      faqs={locationFaqs.thiruvalla}
     />
   );
 }
