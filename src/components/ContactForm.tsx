@@ -17,8 +17,11 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
+const WEB3FORMS_ACCESS_KEY = "c57bdb0d-9e74-46ec-87b5-38b9aa6eddfe";
+
 export default function ContactForm() {
     const [submitted, setSubmitted] = useState(false);
+    const [submitError, setSubmitError] = useState("");
     const {
         register,
         handleSubmit,
@@ -29,9 +32,42 @@ export default function ContactForm() {
     });
 
     const onSubmit = async (data: ContactFormData) => {
-        // Simulate form submission
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-        console.log("Form data:", data);
+        setSubmitError("");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    subject: "New Kodiyattu Builders project enquiry",
+                    from_name: data.name,
+                    name: data.name,
+                    phone: data.phone,
+                    email: data.email,
+                    "Project Type": data.projectType,
+                    "Budget Range": data.budget,
+                    message: data.message,
+                }),
+            });
+
+            const result = (await response.json()) as {
+                success?: boolean;
+                message?: string;
+            };
+
+            if (!response.ok || !result.success) {
+                setSubmitError(result.message || "Unable to send your message. Please try again.");
+                return;
+            }
+        } catch {
+            setSubmitError("Unable to send your message. Please check your connection and try again.");
+            return;
+        }
+
         setSubmitted(true);
         reset();
         setTimeout(() => setSubmitted(false), 5000);
@@ -61,7 +97,14 @@ export default function ContactForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <form
+            onSubmit={handleSubmit(onSubmit)}
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            className="space-y-6"
+        >
+            <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+            <input type="hidden" name="subject" value="New Kodiyattu Builders project enquiry" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label className={labelClasses}>Full Name</label>
@@ -132,6 +175,12 @@ export default function ContactForm() {
                 />
                 {errors.message && <p className={errorClasses}>{errors.message.message}</p>}
             </div>
+
+            {submitError && (
+                <p className="text-red-400 text-sm leading-relaxed">
+                    {submitError}
+                </p>
+            )}
 
             <button
                 type="submit"
