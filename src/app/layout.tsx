@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   ...pageMetadata({
     title:
-      "Kodiyattu Builders | Best Construction Company in Kerala, Thiruvalla & Chengannur",
+      "Kodiyattu Builders | Premium Construction Company in Kerala",
     description:
-      "Kodiyattu Builders is a premium construction company in Kerala for homes, villas, interiors, landscapes and commercial projects across Thiruvalla, Chengannur, Pathanamthitta and Alappuzha.",
+      "Kodiyattu Builders is a premium construction company in Kerala for homes, villas, interiors, landscapes and commercial projects across Chengannur, Thiruvalla, Kottayam, Kollam, Pathanamthitta and Alappuzha.",
   }),
   applicationName: "Kodiyattu Builders",
   authors: [{ name: "Kodiyattu Builders" }],

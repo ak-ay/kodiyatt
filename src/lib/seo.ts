@@ -25,6 +25,7 @@ export const serviceAreas = [
   "Thalavadi",
   "Kochi",
   "Kottayam",
+  "Kollam",
 ] as const;
 
 export const coreKeywords = [
@@ -34,6 +35,10 @@ export const coreKeywords = [
   "builders in Thiruvalla",
   "construction company in Thiruvalla",
   "builders in Chengannur",
+  "builders in Kottayam",
+  "builders in Kollam",
+  "construction company in Kottayam",
+  "construction company in Kollam",
   "home builders in Kerala",
   "premium home builders Kerala",
   "residential construction Kerala",
@@ -181,7 +186,7 @@ export function structuredData() {
             name: "Which areas in Kerala does Kodiyattu Builders serve?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Kodiyattu Builders works across Kerala, with strong project experience around Thiruvalla, Chengannur, Pathanamthitta, Alappuzha, Kozhencherry, Eraviperoor, Edathua and Thalavadi.",
+              text: "Kodiyattu Builders works across Kerala, with strong project experience around Chengannur, Thiruvalla, Kottayam, Kollam, Pathanamthitta, Alappuzha, Kozhencherry, Eraviperoor, Edathua and Thalavadi.",
             },
           },
           {

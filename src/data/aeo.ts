@@ -10,7 +10,7 @@ export const locationFaqs = {
     {
       question: "Which Kerala locations does Kodiyattu Builders serve?",
       answer:
-        "Kodiyattu Builders serves clients across Kerala, with strong project relevance around Thiruvalla, Chengannur, Pathanamthitta, Alappuzha, Kozhencherry, Eraviperoor, Edathua and Thalavadi.",
+        "Kodiyattu Builders serves clients across Kerala, with strong project relevance around Chengannur, Thiruvalla, Kottayam, Kollam, Pathanamthitta, Alappuzha, Kozhencherry, Eraviperoor, Edathua and Thalavadi.",
     },
     {
       question: "Does Kodiyattu Builders handle both construction and interiors?",
@@ -50,6 +50,40 @@ export const locationFaqs = {
       question: "Can Kodiyattu Builders support design-led homes in Chengannur?",
       answer:
         "Yes. The company works with architect partners and experienced craftsmen to execute design-led residential projects with attention to structure, finish and site conditions.",
+    },
+  ],
+  kottayam: [
+    {
+      question: "Does Kodiyattu Builders take construction projects in Kottayam?",
+      answer:
+        "Yes. Kodiyattu Builders serves Kottayam and nearby Kerala locations for premium residential construction, interiors, renovation, landscape design and construction consultation.",
+    },
+    {
+      question: "What services are available for Kottayam clients?",
+      answer:
+        "Kottayam clients can enquire about home construction, villa construction, commercial construction, interior design, landscape design, renovation and project consultation.",
+    },
+    {
+      question: "Is Kodiyattu Builders suitable for premium home construction near Kottayam?",
+      answer:
+        "Yes. Kodiyattu Builders focuses on premium Kerala homes and villas with design coordination, material discipline, site execution and refined finishing.",
+    },
+  ],
+  kollam: [
+    {
+      question: "Does Kodiyattu Builders work with clients in Kollam?",
+      answer:
+        "Yes. Kodiyattu Builders can serve Kollam and connected South Kerala locations for premium construction, interiors, renovation, landscape design and consultation.",
+    },
+    {
+      question: "What project types can Kollam clients discuss?",
+      answer:
+        "Clients in Kollam can discuss premium homes, villas, selected commercial projects, interiors, renovation, landscape work and construction planning.",
+    },
+    {
+      question: "Why consider Kodiyattu Builders for a Kollam project?",
+      answer:
+        "Kodiyattu Builders brings Kerala-focused construction experience, architect-partnered planning, practical consultation and quality-led finishing to premium projects.",
     },
   ],
 } satisfies Record<string, FaqItem[]>;
@@ -115,11 +149,11 @@ export const serviceLandingPages = [
       "Custom homes and villas planned for Kerala climate, site conditions and family needs.",
       "Coordination with architects, engineers and craftsmen for design-led residential builds.",
       "Clear consultation, material discipline and finishing quality from planning to handover.",
-      "Project experience around Chengannur, Thiruvalla, Pathanamthitta and Alappuzha.",
+      "Project experience around Chengannur, Thiruvalla, Kottayam, Kollam, Pathanamthitta and Alappuzha.",
     ],
     bodyCopy: [
       "Kodiyattu Builders handles residential construction in Kerala for families looking for premium homes, villas and carefully finished living spaces. The team works from consultation through construction and handover with attention to structure, materials and detailing.",
-      "Residential projects are planned around Kerala site realities including light, ventilation, rainfall, privacy, courtyards and landscape integration. The company is based around Chengannur and serves nearby towns including Thiruvalla, Pathanamthitta and Alappuzha.",
+      "Residential projects are planned around Kerala site realities including light, ventilation, rainfall, privacy, courtyards and landscape integration. The company is based around Chengannur and serves Kerala locations including Thiruvalla, Kottayam, Kollam, Pathanamthitta and Alappuzha.",
     ],
     faqs: [
       {
@@ -130,7 +164,7 @@ export const serviceLandingPages = [
       {
         question: "Which areas are covered for residential construction?",
         answer:
-          "The company serves Kerala with strong local relevance around Chengannur, Thiruvalla, Pathanamthitta, Alappuzha, Kozhencherry and nearby towns.",
+          "The company serves Kerala with strong local relevance around Chengannur, Thiruvalla, Kottayam, Kollam, Pathanamthitta, Alappuzha, Kozhencherry and nearby towns.",
       },
       {
         question: "Can Kodiyattu Builders work with an architect's design?",
@@ -161,7 +195,7 @@ export const serviceLandingPages = [
     ],
     bodyCopy: [
       "Kodiyattu Builders supports selected commercial construction projects in Kerala, including business, institutional and community spaces that require dependable execution and durable finishing.",
-      "The company brings planning discipline, site coordination and construction quality to commercial work, with local project experience around Chengannur, Thiruvalla, Pathanamthitta and Alappuzha.",
+      "The company brings planning discipline, site coordination and construction quality to commercial work, with local project experience around Chengannur, Thiruvalla, Kottayam, Kollam, Pathanamthitta and Alappuzha.",
     ],
     faqs: [
       {
@@ -261,7 +295,7 @@ export const serviceLandingPages = [
       {
         question: "What areas does Kodiyattu Builders serve for landscape design?",
         answer:
-          "The company serves Kerala, especially Chengannur, Thiruvalla, Pathanamthitta, Alappuzha and nearby towns.",
+          "The company serves Kerala, especially Chengannur, Thiruvalla, Kottayam, Kollam, Pathanamthitta, Alappuzha and nearby towns.",
       },
     ],
   },
@@ -303,7 +337,7 @@ export const serviceLandingPages = [
       {
         question: "Where are renovation services available?",
         answer:
-          "Kodiyattu Builders serves Kerala, with strong local focus around Chengannur, Thiruvalla, Pathanamthitta and Alappuzha.",
+          "Kodiyattu Builders serves Kerala, with strong local focus around Chengannur, Thiruvalla, Kottayam, Kollam, Pathanamthitta and Alappuzha.",
       },
     ],
   },

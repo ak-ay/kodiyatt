@@ -4,7 +4,13 @@ import { serviceLandingPages } from "@/data/aeo";
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://kodiyattubuilders.com";
     const projects = ["hedge", "wedge", "georges-haven", "eclipse", "simhasana-palli"];
-    const seoPages = ["construction-company-kerala", "builders-thiruvalla", "builders-chengannur"];
+    const seoPages = [
+        "construction-company-kerala",
+        "builders-thiruvalla",
+        "builders-chengannur",
+        "builders-kottayam",
+        "builders-kollam",
+    ];
 
     return [
         { url: baseUrl, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },

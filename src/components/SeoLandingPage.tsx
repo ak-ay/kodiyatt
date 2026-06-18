@@ -53,7 +53,7 @@ export default function SeoLandingPage({
   });
   const copy = bodyCopy ?? [
     `${company.name} works with homeowners, families, architects and organizations looking for dependable construction quality in ${area} and nearby Kerala locations. The team handles residential construction, commercial projects, interiors, renovation, landscape work and practical project consultation.`,
-    "The company is based around Chengannur and serves nearby markets including Thiruvalla, Pathanamthitta, Alappuzha, Kozhencherry, Eraviperoor, Edathua and Thalavadi. Every project is approached with clear planning, material discipline, site coordination and finishing standards suited to Kerala homes and commercial spaces.",
+    "The company is based around Chengannur and serves Kerala project locations including Thiruvalla, Kottayam, Kollam, Pathanamthitta, Alappuzha, Kozhencherry, Eraviperoor, Edathua and Thalavadi. Every project is approached with clear planning, material discipline, site coordination and finishing standards suited to Kerala homes and commercial spaces.",
   ];
 
   return (
