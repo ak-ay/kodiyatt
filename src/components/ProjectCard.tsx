@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ProjectCardProps {
     slug: string;
@@ -10,10 +11,11 @@ interface ProjectCardProps {
     category: string;
     image?: string;
     imageIndex?: number;
+    priority?: boolean;
     className?: string;
 }
 
-export default function ProjectCard({ slug, name, location, category, image, imageIndex = 0, className = "" }: ProjectCardProps) {
+export default function ProjectCard({ slug, name, location, category, image, imageIndex = 0, priority = false, className = "" }: ProjectCardProps) {
     const fallbackImage = `/projects/${slug}/${imageIndex + 1}.jpg`;
 
     return (
@@ -25,14 +27,15 @@ export default function ProjectCard({ slug, name, location, category, image, ima
             className={`group relative overflow-hidden rounded-sm ${className}`}
         >
             <Link href={`/projects/${slug}`} className="block relative w-full h-full min-h-[260px] sm:min-h-[300px] md:min-h-[400px]">
-                {/* Background image */}
+                {/* Project image */}
                 <div className="absolute inset-0 bg-charcoal">
-                    <div
-                        className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                        style={{
-                            backgroundImage: `url(${image || fallbackImage})`,
-                            backgroundColor: '#2a2a2a',
-                        }}
+                    <Image
+                        src={image || fallbackImage}
+                        alt={`${name} — ${category.toLowerCase()} project by Kodiyattu Builders in ${location}`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        priority={priority}
+                        className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
                     />
                 </div>
 

@@ -151,7 +151,7 @@ export default function SeoLandingPage({
                         href={`/${page.slug}`}
                         className="text-muted hover:text-gold transition-colors text-sm"
                       >
-                        {page.serviceName}
+                        Construction in {page.city}
                       </Link>
                     </li>
                   ))}

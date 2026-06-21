@@ -3,6 +3,7 @@
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import SectionHeader from "@/components/SectionHeader";
 import ServiceCard from "@/components/ServiceCard";
 import ProjectCard from "@/components/ProjectCard";
@@ -58,9 +59,17 @@ export default function Home() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.1, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${heroImages[activeHeroImage]})` }}
-            />
+              className="absolute inset-0"
+            >
+              <Image
+                src={heroImages[activeHeroImage]}
+                alt="Premium home construction project by Kodiyattu Builders in Kerala"
+                fill
+                sizes="100vw"
+                priority={activeHeroImage === 0}
+                className="object-cover object-center"
+              />
+            </motion.div>
           </AnimatePresence>
           <div className="absolute inset-0 bg-gradient-to-b from-deep/70 via-deep/50 to-deep" />
         </motion.div>
@@ -215,9 +224,12 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-[4/5] relative overflow-hidden">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: "url(/projects/georges-haven/1.png)" }}
+                <Image
+                  src="/projects/georges-haven/1.png"
+                  alt="GEORGE'S HAVEN residential project by Kodiyattu Builders in Chengannur, Kerala"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep/60 to-transparent" />
               </div>
@@ -381,9 +393,12 @@ export default function Home() {
 
       {/* ═══════════ CTA BANNER ═══════════ */}
       <section className="relative py-20 sm:py-24 md:py-32 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center md:bg-fixed"
-          style={{ backgroundImage: "url(/projects/wedge/1.jpg)" }}
+        <Image
+          src="/projects/wedge/1.jpg"
+          alt="WEDGE residential project by Kodiyattu Builders in Chengannur, Alappuzha"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-deep/85" />
         <div className="relative z-10 container-custom text-center">

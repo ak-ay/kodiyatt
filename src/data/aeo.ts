@@ -121,6 +121,7 @@ const bestConstructionTargets = [
 
 export const bestConstructionCompanyPages = bestConstructionTargets.map((target) => ({
   slug: target.slug,
+  city: target.city,
   title: `Best Construction Company in ${target.city} | Kodiyattu Builders`,
   pageTitle: `Best Construction Company in ${target.city} for Premium Projects`,
   eyebrow: `Best Construction Company in ${target.city}`,
@@ -129,9 +130,13 @@ export const bestConstructionCompanyPages = bestConstructionTargets.map((target)
   keywords: [
     `best construction company in ${target.city}`,
     `top construction company in ${target.city}`,
+    `construction company in ${target.city}`,
+    `builders in ${target.city}`,
     `best builders in ${target.city}`,
     `home builders in ${target.city}`,
+    `home builders ${target.city}`,
     `villa builders in ${target.city}`,
+    `villa builders ${target.city}`,
     `construction company ${target.city}`,
   ],
   highlights: [

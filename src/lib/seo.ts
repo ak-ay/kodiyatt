@@ -3,6 +3,8 @@ import { company, projects, services } from "@/data/company";
 
 export const siteUrl = "https://kodiyattubuilders.com";
 
+export const defaultOgImage = `${siteUrl}/projects/hedge/9.jpg`;
+
 export type FaqItem = {
   question: string;
   answer: string;
@@ -57,13 +59,18 @@ export function pageMetadata({
   description,
   path = "/",
   keywords = [],
+  image = defaultOgImage,
+  imageAlt,
 }: {
   title: string;
   description: string;
   path?: string;
   keywords?: readonly string[];
+  image?: string;
+  imageAlt?: string;
 }): Metadata {
   const url = `${siteUrl}${path}`;
+  const ogImage = image.startsWith("http") ? image : `${siteUrl}${image}`;
 
   return {
     title,
@@ -81,10 +88,10 @@ export function pageMetadata({
       type: "website",
       images: [
         {
-          url: `${siteUrl}/projects/hedge/9.jpg`,
+          url: ogImage,
           width: 1200,
           height: 630,
-          alt: `${company.name} construction project in Kerala`,
+          alt: imageAlt ?? `${company.name} construction project in Kerala`,
         },
       ],
     },
@@ -92,7 +99,7 @@ export function pageMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [`${siteUrl}/projects/hedge/9.jpg`],
+      images: [ogImage],
     },
   };
 }
@@ -269,6 +276,54 @@ export function serviceStructuredData({
       "@id": `${siteUrl}/#business`,
     },
     areaServed: areaServed.map((area) => ({ "@type": "Place", name: area })),
+  };
+}
+
+export function projectStructuredData(project: {
+  slug: string;
+  name: string;
+  description: string;
+  location: string;
+  category: string;
+  architect: string;
+  year: string;
+  area: string;
+  images: readonly string[];
+}) {
+  const path = `/projects/${project.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${siteUrl}${path}#webpage`,
+        url: `${siteUrl}${path}`,
+        name: `${project.name} | ${company.name}`,
+        description: project.description,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: { "@id": `${siteUrl}/#business` },
+      },
+      breadcrumbStructuredData([
+        { name: "Home", path: "/" },
+        { name: "Projects", path: "/projects" },
+        { name: project.name, path },
+      ]),
+      {
+        "@type": "CreativeWork",
+        "@id": `${siteUrl}${path}#project`,
+        name: project.name,
+        description: project.description,
+        url: `${siteUrl}${path}`,
+        image: project.images.map((img) => `${siteUrl}${img}`),
+        dateCreated: project.year,
+        about: project.category,
+        locationCreated: { "@type": "Place", name: project.location },
+        creator: { "@id": `${siteUrl}/#business` },
+        ...(project.architect && project.architect !== company.name
+          ? { contributor: { "@type": "Organization", name: project.architect } }
+          : {}),
+      },
+    ],
   };
 }
 

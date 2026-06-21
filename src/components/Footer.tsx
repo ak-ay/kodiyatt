@@ -76,7 +76,7 @@ export default function Footer() {
                                         href={`/${page.slug}`}
                                         className="text-muted hover:text-cream text-sm transition-colors duration-300 hover-line"
                                     >
-                                        {page.serviceName}
+                                        {page.city}
                                     </Link>
                                 </li>
                             ))}
