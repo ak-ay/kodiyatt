@@ -465,4 +465,94 @@ export const serviceLandingPages = [
       },
     ],
   },
+  {
+    slug: "affordable-home-construction-kerala",
+    title: "Affordable Home Construction in Kerala | Kodiyattu Builders",
+    pageTitle: "Affordable Home Construction in Kerala",
+    eyebrow: "Affordable Home Construction",
+    description:
+      "Looking for affordable builders in Kerala? Kodiyattu Builders offers budget-friendly home construction with transparent costing and quality materials across Chengannur, Thiruvalla, Kottayam, Kollam, Pathanamthitta and Alappuzha.",
+    serviceName: "Affordable Home Construction",
+    keywords: [
+      "affordable builders in Kerala",
+      "affordable home construction Kerala",
+      "budget home builders Kerala",
+      "low cost house construction Kerala",
+      "affordable house construction Kerala",
+      "budget friendly construction Kerala",
+    ],
+    highlights: [
+      "Budget-friendly home construction planned around your spending limit.",
+      "Transparent, itemised costing with no hidden surprises mid-project.",
+      "Value-engineered structure and right-grade materials that protect quality.",
+      "Affordable building support across Chengannur, Thiruvalla, Kottayam, Kollam and Pathanamthitta.",
+    ],
+    bodyCopy: [
+      "Kodiyattu Builders makes affordable home construction in Kerala possible without cutting corners on safety or durability. The biggest savings come from smart planning — efficient structural design, choosing the right material grade for each part of the house, reducing wastage and avoiding costly mid-project changes.",
+      "We work with you to decide where to spend and where to save, then build with transparent, itemised costing so you always know where your money goes. Budget homes are planned with the same discipline as our premium work, just specified to fit a tighter budget.",
+      "Affordable construction is available across Kerala, with strong local presence around Chengannur, Thiruvalla, Kottayam, Kollam, Pathanamthitta and Alappuzha. For typical 2026 rates, see our Kerala construction cost guide, then ask us for a free project-specific estimate.",
+    ],
+    faqs: [
+      {
+        question: "Who is a good affordable builder in Kerala?",
+        answer:
+          "Kodiyattu Builders is a strong choice for affordable home construction in Kerala, offering budget-friendly builds with transparent costing, value-engineered structure and quality local materials.",
+      },
+      {
+        question: "How can I reduce home construction cost in Kerala?",
+        answer:
+          "Costs drop with efficient design, the right material grade for each element, lower wastage, and avoiding mid-project changes. Kodiyattu Builders helps you make these decisions before work begins.",
+      },
+      {
+        question: "Does affordable construction mean lower quality?",
+        answer:
+          "No. A lower budget means smarter choices, not weaker construction. Kodiyattu Builders keeps structure and finishing standards reliable while specifying materials to suit your budget.",
+      },
+    ],
+  },
+  {
+    slug: "budget-construction-company-kerala",
+    title: "Budget Construction Company in Kerala | Kodiyattu Builders",
+    pageTitle: "Budget-Friendly Construction Company in Kerala",
+    eyebrow: "Budget Construction Company",
+    description:
+      "Kodiyattu Builders is a budget-friendly construction company in Kerala offering transparent pricing across budget, standard and premium tiers for homes, villas and renovations.",
+    serviceName: "Budget Construction",
+    keywords: [
+      "best budget construction company in Kerala",
+      "budget construction company Kerala",
+      "budget builders Kerala",
+      "low budget house construction Kerala",
+      "affordable construction company Kerala",
+      "economical construction Kerala",
+    ],
+    highlights: [
+      "Clear pricing across budget, standard and premium build tiers.",
+      "Right-sized specification so you only pay for what adds real value.",
+      "Quality-controlled execution at every budget level.",
+      "Local Kerala experience for practical, cost-aware building decisions.",
+    ],
+    bodyCopy: [
+      "Kodiyattu Builders is a budget-friendly construction company in Kerala that believes a smaller budget deserves the same honesty and discipline as a luxury project. We offer transparent pricing across budget, standard and premium tiers so you can choose the level that fits your plans.",
+      "Every budget build is planned with proper structural design, controlled material selection and quality checks during execution — so the home is durable and well finished, not just cheap. We guide you on the trade-offs so the savings are real and the result still feels like a home you are proud of.",
+      "Whether you are planning a compact family home or a larger project on a controlled budget, Kodiyattu Builders supports clients across Chengannur, Thiruvalla, Kottayam, Kollam, Pathanamthitta and Alappuzha. See our 2026 Kerala construction cost guide for indicative rates, then contact us for a tailored estimate.",
+    ],
+    faqs: [
+      {
+        question: "Which is the best budget construction company in Kerala?",
+        answer:
+          "Kodiyattu Builders is a strong option for budget construction in Kerala, offering transparent pricing across budget, standard and premium tiers with quality-controlled execution at every level.",
+      },
+      {
+        question: "What is the lowest construction cost per sq ft in Kerala?",
+        answer:
+          "Budget house construction in Kerala generally starts around ₹1,800–₹2,200 per sq ft in 2026, depending on design, materials and site conditions.",
+      },
+      {
+        question: "Can I build a quality home on a tight budget?",
+        answer:
+          "Yes. With efficient design, the right material choices and disciplined execution, Kodiyattu Builders helps you build a durable, well-finished home within a controlled budget.",
+      },
+    ],
+  },
 ] as const;

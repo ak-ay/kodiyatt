@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const projects = ["hedge", "wedge", "georges-haven", "eclipse", "simhasana-palli"];
     const seoPages = [
         "construction-company-kerala",
+        "construction-cost-kerala",
     ];
 
     return [

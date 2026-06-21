@@ -26,13 +26,27 @@ export const company = {
     emails: ["kodiyattubuilders@gmail.com"],
     website: "www.kodiyattubuilders.com",
     address: "Kodiyattu Builders, Puthencavu PO, Chengannur, Kerala, India",
+    streetAddress: "Puthencavu PO",
+    locality: "Chengannur",
+    region: "Kerala",
+    postalCode: "689123",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31445.04!2d76.58!3d9.31!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0621f0d4d0b3a7%3A0x7e1e4e831c2e3e4a!2sChengannur%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     whatsapp: "+919447796385",
+  },
+  // Exact Google Business Profile pin for Kodiyattu Builders, Puthencavu.
+  geo: { latitude: 9.314782, longitude: 76.6244194 },
+  hours: {
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "09:00",
+    closes: "18:00",
   },
   social: {
     instagram: "https://www.instagram.com/kodiyattu_builders?igsh=ZjM2eXc2NmE2YjBl",
     facebook: "https://facebook.com/kodiyattubuilders",
     youtube: "https://youtube.com/@kodiyattubuilders",
+    // Google Business Profile / Maps place URL (added to the business `sameAs`).
+    googleBusinessProfile:
+      "https://www.google.com/maps/place/Kodiyattu+Builders/@9.314782,76.6218445,17z/data=!3m1!4b1!4m6!3m5!1s0x3b0623007e36af9b:0xcd13307ca7ece68c!8m2!3d9.314782!4d76.6244194!16s%2Fg%2F11vx1_y1wc",
   },
   partners: ["Mindspark Architects", "Ninan Philip & Associates"],
 };

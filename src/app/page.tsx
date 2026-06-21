@@ -299,6 +299,17 @@ export default function Home() {
               </Link>
             ))}
           </motion.div>
+          <motion.div {...fadeUp} className="mt-6 text-center">
+            <Link
+              href="/construction-cost-kerala"
+              className="inline-flex items-center gap-2 text-gold text-sm tracking-wider uppercase font-semibold hover-line"
+            >
+              See 2026 Kerala construction cost per sq ft
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
         </div>
       </section>
 

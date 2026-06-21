@@ -51,6 +51,16 @@ export default function Footer() {
                                     </Link>
                                 </li>
                             ))}
+                            <li>
+                                <Link href="/construction-cost-kerala" className="text-muted hover:text-cream text-sm transition-colors duration-300 hover-line">
+                                    Construction Cost Guide
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/affordable-home-construction-kerala" className="text-muted hover:text-cream text-sm transition-colors duration-300 hover-line">
+                                    Affordable Construction
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 

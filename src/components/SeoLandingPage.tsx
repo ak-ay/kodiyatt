@@ -129,6 +129,14 @@ export default function SeoLandingPage({
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <Link
+                    href="/construction-cost-kerala"
+                    className="text-muted hover:text-gold transition-colors text-sm"
+                  >
+                    Construction Cost Guide
+                  </Link>
+                </li>
               </ul>
               <div className="border-t border-card-border mt-6 pt-6">
                 <p className="text-cream font-semibold">Call Kodiyattu Builders</p>
